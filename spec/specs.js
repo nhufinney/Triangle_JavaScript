@@ -1,18 +1,26 @@
-describe('triangle', function(){
+describe('anagram', function(){
 
-    it("it returns 3 lengthes do not form a triangle", function(){
-        expect(triangle(2 , 8, 3)).to.equal("not a triangle");
+    it("it returns to false if no match of anagram found, in one word compare", function(){
+        expect(anagram("hat", "at")).to.eql([]);
     });
 
-    it("it returns 3 lengthes form a normal triangle: scalene", function(){
-        expect(triangle(5 , 8, 7)).to.equal("a scalene");
+    it("it returns to false if no match of anagram found, in 2 words compare", function(){
+        expect(anagram("hat", "in morning")).to.eql([]);
     });
 
-    it("it returns 3 lengthes form an isosceles triangle", function(){
-            expect(triangle(5 , 8, 5)).to.equal("an isosceles");
+    it("it returns to one match, in 1 word compare", function(){
+        expect(anagram("hat", "tah")).to.eql(["tah"]);
     });
 
-    it("it returns 3 lengthes form an equilateral triangle", function(){
-            expect(triangle(5 , 5, 5)).to.equal("an equilateral");
+    it("it returns to 2 match, in a sentence", function(){
+        expect(anagram("hat", "tah ath")).to.eql(["tah", "ath"]);
+    });
+
+    it("it returns to 2 match, in a long sentence", function(){
+        expect(anagram("hat", "tah ath htis morning I love studying JS")).to.eql(["tah", "ath"]);
+    });
+
+    it("it returns to 4 match, in a long sentence", function(){
+        expect(anagram("tah", "tah ath htis morning I aht tah love studying JS")).to.eql(["tah", "ath", "aht", "tah"]);
     });
 });
