@@ -4,6 +4,9 @@ var triangle = function(side_a, side_b, side_c) {
     var result ="";
     if ((side_a + side_b > side_c) && (side_a + side_c > side_b) && (side_b + side_c > side_a)){
         result = "scalene";
+        if ((side_a === side_b) || (side_a === side_c) || (side_b === side_c)){
+            result = "isosceles";
+        }
     } else { result= "not triangle";}
 
     
