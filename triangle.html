@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>coinCombination</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Triangle Check</h1>
+
+      <form id="triangle"><br>
+        <p>Let's input 3 lengths to see what it is? Number only please!</p>
+        <div class="form-group">
+          <label for="input1">Input the first side
+          <input id="input1" name='input1' required></label>
+        </div>
+
+        <div class="form-group">
+          <label for="input2">Input the second side
+          <input id="input2" name='input2' required></label>
+        </div>
+
+        <div class="form-group">
+          <label for="input3">Input the third side
+          <input id="input3" name='input3' required></label>
+        </div>
+
+        <div>
+            <br><br>
+          <button type="submit" class="btn">Check!</button>
+        </div>
+
+      </form>
+
+      <div id="result">
+        <p>It combines:
+            <span class='result'></span> <span class = "not_triangle"></span>
+        </p>
+      </div>
+
+    </div>
+  </body>
+</html>
