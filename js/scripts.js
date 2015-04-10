@@ -1,32 +1,40 @@
-var anagram = function(word, sentence) {
+var prime = function(input) {
 
-    var word = word.split("").sort().join("");
-    var sentence = sentence.split(" ");
-    var array = [];
+    var prime = [2];
 
-    for (var i in sentence){
-        var each = sentence[i].split("").sort().join("");
-        if (word === each){
-            array.push(sentence[i]);
-        }
+    for (var i = 3; i<= input; i++){
+        prime.push(i);
     };
 
-    return array;
+
+    for (var a = 0; a <= array.length; a++){
+        for (var b = 0; b <= prime.length; b++){
+            if (array[a] % prime[b] !== 0){
+                var new_prime = array[a];
+                prime.push(new_prime);
+
+            }break;
+        }
+    }
+
+    return prime;
 };
 
+
+
 jQuery(document).ready(function(event){
-  $("#anagram").submit(function(event) {
-      var word = $("#input").val();
-      var sentence = $("#sentence").val();
-      var result = anagram(word, sentence);
+  $("#prime").submit(function(event) {
+  var input = $("#input").val();
+  var result = prime(input);
+  result.pop();
 
-      $("#your_input").text("Your word is '"+word +"'");
-      $("#your_sentence").text("Your sentence is '"+ sentence+ "'");
+  //$("#order").text(order[0]);
 
-      var string = result.join("," + " ");
-      $("#final").text(string);
+  for (var i in result){
+    $("#final").append(result[i]+ " , ");
+  }
 
-      $("#result").show();
-      event.preventDefault();
+  $("#result").show();
+  event.preventDefault();
 });
 });
